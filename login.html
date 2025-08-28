@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Orato Auth</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="container">
+    <div class="card" id="card">
+      
+      <!-- LOGIN SIDE -->
+      <div class="side front">
+        <form action="/login" method="POST" class="form">
+          <h2 class="card-title">ORATO LOGIN</h2>
+          <input type="email" name="email" placeholder="Email" required>
+          <input type="password" name="password" placeholder="Password" required>
+          <button type="submit" class="btn">Sign In</button>
+
+          <p class="switch-text">
+            Don’t have an account? <a href="#" id="showRegister">Sign up</a>
+          </p>
+
+          <button type="button" class="google-btn">
+            <img src="https://www.svgrepo.com/show/355037/google.svg" alt="Google">
+            Continue with Google
+          </button>
+        </form>
+      </div>
+
+      <!-- REGISTER SIDE -->
+      <div class="side back">
+        <form action="/register" method="POST" class="form">
+          <h2 class="card-title">ORATO REGISTER</h2>
+          <input type="text" name="name" placeholder="Full Name" required>
+          <input type="email" name="email" placeholder="Email" required>
+          <input type="password" name="password" placeholder="Password" required>
+          <input type="password" name="confirm" placeholder="Confirm Password" required>
+          <button type="submit" class="btn">Sign Up</button>
+
+          <p class="switch-text">
+            Already have an account? <a href="#" id="showLogin">Sign in</a>
+          </p>
+
+          <button type="button" class="google-btn">
+            <img src="https://www.svgrepo.com/show/355037/google.svg" alt="Google">
+            Continue with Google
+          </button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    const card = document.getElementById("card");
+    const showRegister = document.getElementById("showRegister");
+    const showLogin = document.getElementById("showLogin");
+
+    showRegister.addEventListener("click", (e) => {
+      e.preventDefault();
+      card.classList.add("flipped");
+    });
+
+    showLogin.addEventListener("click", (e) => {
+      e.preventDefault();
+      card.classList.remove("flipped");
+    });
+  </script>
+</body>
+</html>
